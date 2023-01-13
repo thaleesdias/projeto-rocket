@@ -39,7 +39,8 @@ body * {
 }
 
 #container {
-  width: 360px;
+  width: 100%;
+  max-width: 588px;
   margin: 56px auto 0px;
   
   padding: 0px 24px;
@@ -84,7 +85,7 @@ body * {
   left: initial;
 }
 
-#switch span {
+#switch span {  
   display: block;
   width: 64px;
   height: 24px;
