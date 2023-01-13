@@ -12,7 +12,7 @@
   --highlight-color: rgba(255, 255, 255, 0.2);
   --switch-bg-url: url(./assets/moon.svg);
 }
-.light{
+.light {
   --text-color: black;
   --bg-url: url(./assets/bg-light.jpg);
   --stroke-color: rgba(0, 0, 0, 0.5);
@@ -29,13 +29,12 @@ body {
   background-position: top  center;
   background-size: cover;
   */
-  background: var(--bg-url) no-repeat
-  top center /cover;
+  background: var(--bg-url) no-repeat top center / cover;
   height: 100vh;
 }
 
 body * {
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   color: var(--text-color);
 }
 
@@ -43,7 +42,7 @@ body * {
   width: 100%;
   max-width: 588px;
   margin: 56px auto 0px;
-  
+
   padding: 0px 24px;
 }
 /*Profile*/
@@ -68,11 +67,9 @@ body * {
   margin: 4px auto;
 }
 #switch button {
-  
   width: 32px;
   height: 32px;
-  background: white var(--switch-bg-url) no-repeat
-  center;
+  background: white var(--switch-bg-url) no-repeat center;
   border: 0;
   border-radius: 50%;
   position: absolute;
@@ -80,13 +77,17 @@ body * {
   left: 0;
   z-index: 1;
   transform: translateY(-50%);
+
+  animation: slide-of 0.5s ;
 }
 .light #switch button {
-  right: 0;
-  left: initial;
+  animation: slide-in 0.5s forwards;
+}
+#switch button:hover {
+  outline: 8px solid var(--highlight-color);
 }
 
-#switch span {  
+#switch span {
   display: block;
   width: 64px;
   height: 24px;
@@ -106,22 +107,22 @@ ul {
   padding: 24px 0;
 }
 
-ul li a{
+ul li a {
   display: flex;
   align-items: center;
   justify-content: center;
-  
+
   padding: 16px 24px;
   background: var(--surface-color);
   border: var(--stroke-color) 1px solid;
   border-radius: 8px;
-  
+
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
   text-decoration: none;
   font-weight: 500;
 
-  transition: background .2s;
+  transition: background 0.2s;
 }
 
 ul li a:hover {
@@ -132,7 +133,7 @@ ul li a:hover {
 #social {
   display: flex;
   justify-content: center;
-  
+
   padding: 24px 0;
   font-size: 24px;
 }
@@ -146,14 +147,29 @@ ul li a:hover {
 }
 #social a:hover {
   background: var(--highlight-color);
-  
 }
 
-@media( min-width:700px ) {
-  :root{
-    --bg-url: url(./assets/bg-darkT.jpg)
+@media (min-width: 700px) {
+  :root {
+    --bg-url: url(./assets/bg-darkT.jpg);
   }
   .light {
-    --bg-url: url(./assets/bg-litT.jpg)
+    --bg-url: url(./assets/bg-litT.jpg);
+  }
+}
+@keyframes slide-in {
+  from {
+    left: 0;
+  }
+  to {
+    left: 50%;
+  }
+}
+@keyframes slide-of {
+  from {
+    left: 50%;
+  }
+  to {
+    left: 0;
   }
 }
